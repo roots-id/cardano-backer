@@ -16,7 +16,7 @@ from hio.help import decking
 
 import keri.app.oobiing
 from keri.app import directing, storing, httping, forwarding, oobiing
-from keri.app import help
+from keri import help
 from keri.core import eventing, parsing, routing
 from keri.core.coring import Ilks
 from keri.db import basing

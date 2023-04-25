@@ -24,4 +24,4 @@ kli init --name witroot --nopasscode  --config-dir $CONFIG_DIR --config-file wit
 
 kli incept --name witroot --alias witroot --config $CONFIG_DIR --file witroot_cfg.json
 
-python ./src/backer/cli/backer.py start --name witroot --alias witroot -H 5666 -T 5665 --ledger cardano
+python -m backer start --name witroot --alias witroot -H 5666 -T 5665 --ledger cardano

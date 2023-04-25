@@ -7,7 +7,7 @@ import multicommand
 from keri import help
 
 from keri.app import directing
-import commands
+from backer.cli import commands
 
 logger = help.ogler.getLogger()
 
