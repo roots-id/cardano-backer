@@ -1,4 +1,5 @@
 CONFIG_DIR=$(pwd)
+STORE_DIR=$(pwd)/store
 
 mkdir -p $CONFIG_DIR/keri/cf
 echo '{
@@ -20,8 +21,8 @@ echo '{
     "nsith": "1"
   }' > $CONFIG_DIR/witroot_cfg.json
 
-kli init --name witroot --nopasscode  --config-dir $CONFIG_DIR --config-file witroot
+kli init --name witroot --nopasscode  --config-dir $CONFIG_DIR --config-file witroot --base $STORE_DIR
 
-kli incept --name witroot --alias witroot --config $CONFIG_DIR --file witroot_cfg.json
+kli incept --name witroot --alias witroot --config $CONFIG_DIR --file witroot_cfg.json --base $STORE_DIR
 
-python -m backer start --name witroot --alias witroot -H 5666 -T 5665 --ledger cardano
+python -m backer start --name witroot --alias witroot -H 5666 -T 5665 --ledger cardano --base $STORE_DIR
