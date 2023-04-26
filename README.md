@@ -13,8 +13,12 @@ and original `keripy` [PR](https://github.com/WebOfTrust/keripy/pull/418)
 ```
 pip install -e .
 ```
+Check installation with:
+```
+backer --help
+```
 
-# Start backer
+# Start script
 ```
 ./tests/start_backer.sh
 ```

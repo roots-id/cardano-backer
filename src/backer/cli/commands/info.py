@@ -10,9 +10,8 @@ import logging
 
 from keri import __version__
 from keri import help
-from keri.app import directing, habbing, keeping
-# from backer import backering
-# from keri.ledger import cardaning
+from keri.app import keeping
+from ... import cardaning
 from keri.app.cli.common import existing
 
 d = "Display registrar backer information"

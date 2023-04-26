@@ -25,4 +25,4 @@ kli init --name witroot --nopasscode  --config-dir $CONFIG_DIR --config-file wit
 
 kli incept --name witroot --alias witroot --config $CONFIG_DIR --file witroot_cfg.json --base $STORE_DIR
 
-python -m backer start --name witroot --alias witroot -H 5666 -T 5665 --ledger cardano --base $STORE_DIR
+backer start --name witroot --alias witroot -H 5666 -T 5665 --ledger cardano --base $STORE_DIR
