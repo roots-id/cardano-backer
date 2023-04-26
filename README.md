@@ -22,3 +22,10 @@ backer --help
 ```
 ./tests/start_backer.sh
 ```
+
+# Docker
+```
+docker build -f ./Dockerfile .  -t cardano-backer   / use --platform=linux/amd64 if needed
+docker run -i -t -e BLOCKFROST_API_KEY={API KEY} cardano-backer
+```
+
