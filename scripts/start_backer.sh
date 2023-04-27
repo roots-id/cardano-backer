@@ -2,6 +2,11 @@ CONFIG_DIR="${BACKER_CONFIG_DIR:-$(pwd)}"
 STORE_DIR="${BACKER_STORE_DIR:-$(pwd)/store}"
 URL="${BACKER_URL:-http://127.0.0.1}"
 PORT="${BACKER_PORT:-5666}"
+if [[ -z "${BACKER_SALT}" ]]; then
+  SALT=""
+else
+  SALT="--salt ${BACKER_SALT}"
+fi
 
 mkdir -p $CONFIG_DIR/keri/cf
 echo '{
@@ -23,8 +28,8 @@ echo '{
     "nsith": "1"
   }' > $CONFIG_DIR/backer_cfg.json
 
-kli init --name backer --nopasscode  --config-dir $CONFIG_DIR --config-file backer --base $STORE_DIR 
+kli init --name backer --nopasscode  --config-dir $CONFIG_DIR --config-file backer --base $STORE_DIR $SALT
 
 kli incept --name backer --alias backer --config $CONFIG_DIR --file backer_cfg.json --base $STORE_DIR 
 
-backer start --name backer --alias backer -H $PORT --ledger cardano --base $STORE_DIR 
+backer start --name backer  --alias backer -H $PORT --ledger cardano --base $STORE_DIR 
