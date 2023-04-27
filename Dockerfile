@@ -14,4 +14,4 @@ RUN apt-get install -y libsodium-dev pkg-config
 
 RUN pip install --no-cache-dir --upgrade -e .
 
-CMD "backer --help"
+CMD "/code/scripts/start_backer.sh"
